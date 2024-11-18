@@ -4,6 +4,9 @@ import { AppService } from './app.service';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { StudentsModule } from './student/students.module';
 import { UsersModule } from './users/users.module';
+import { PassportModule } from '@nestjs/passport';
+import { PassportServices } from './Passport/passport.sevices';
+import { BearerStrategy } from './Passport/bearer.strategy';
 
 @Module({
   imports: [
@@ -19,8 +22,9 @@ import { UsersModule } from './users/users.module';
     }),
     StudentsModule,
     UsersModule,
+    PassportModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, BearerStrategy, PassportServices],
 })
 export class AppModule {}

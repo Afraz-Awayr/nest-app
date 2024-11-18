@@ -15,7 +15,7 @@ import {
   tableName: 'user',
   timestamps: true,
   underscored: true,
-})
+})  
 export class User extends Model<User> {
   @PrimaryKey
   @AutoIncrement
